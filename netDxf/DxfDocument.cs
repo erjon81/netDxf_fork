@@ -753,7 +753,6 @@ namespace netDxf
         /// <param name="isBinary">Returns true if the DXF is a binary file.</param>
         /// <returns>String that represents the DXF file version.</returns>
         /// <remarks>The caller will be responsible of closing the stream.</remarks>
-        public static DxfVersion CheckDxfFileVersion(Stream stream, out bool isBinary)
         {
             string value;
             isBinary = false;
@@ -761,6 +760,7 @@ namespace netDxf
             try
             {
                 value = DxfReader.CheckHeaderVariable(stream, HeaderVariableCode.AcadVer, out isBinary);  
+                //note kjo eshte vlera e dxf version check
             }
             catch
             {
